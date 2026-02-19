@@ -15,8 +15,7 @@ const GlassCard = ({ children, className = '' }: GlassCardProps) => {
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
     setStyle({
-      transform: `perspective(800px) rotateX(${(y - 0.5) * -8}deg) rotateY(${(x - 0.5) * 8}deg)`,
-      background: `radial-gradient(circle at ${x * 100}% ${y * 100}%, hsl(158 80% 50% / 0.08), transparent 60%), hsl(158 35% 9% / 0.6)`,
+      transform: `perspective(800px) rotateX(${(y - 0.5) * -4}deg) rotateY(${(x - 0.5) * 4}deg)`,
     });
   };
 
@@ -27,7 +26,7 @@ const GlassCard = ({ children, className = '' }: GlassCardProps) => {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`glass-panel p-6 transition-all duration-300 ease-out ${className}`}
+      className={`rounded-2xl border border-border bg-card p-6 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-primary/5 ${className}`}
       style={style}
     >
       {children}

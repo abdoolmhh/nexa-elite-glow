@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="border-t border-border py-12 relative z-10">
+  <footer className="border-t border-border py-12 relative z-10 bg-card">
     <div className="container mx-auto px-6">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
@@ -17,7 +17,7 @@ const Footer = () => (
           ))}
         </div>
       </div>
-      <div className="mt-8 pt-6 border-t border-border/50 text-center text-xs text-muted-foreground font-mono">
+      <div className="mt-8 pt-6 border-t border-border text-center text-xs text-muted-foreground font-mono">
         © {new Date().getFullYear()} NEXA StoreOS. All rights reserved.
       </div>
     </div>

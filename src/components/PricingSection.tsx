@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
-import GlassCard from './GlassCard';
 
 const PLANS = [
   {
@@ -37,6 +36,10 @@ const PricingSection = () => {
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <div className="text-center mb-12">
+            <span className="section-badge">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              Pricing
+            </span>
             <h2 className="section-heading text-foreground">
               Simple, honest <span className="text-primary">pricing.</span>
             </h2>
@@ -47,16 +50,13 @@ const PricingSection = () => {
               <span className={annual ? 'text-muted-foreground' : 'text-foreground'}>Monthly</span>
               <button
                 onClick={() => setAnnual(!annual)}
-                className="relative w-14 h-7 rounded-full transition-colors duration-300"
-                style={{ background: annual ? 'hsl(158 80% 50%)' : 'hsl(158 15% 18%)' }}
+                className="relative w-14 h-7 rounded-full transition-colors duration-300 bg-muted"
+                style={annual ? { background: 'hsl(158 80% 42%)' } : undefined}
                 aria-label="Toggle annual pricing"
               >
                 <div
-                  className="absolute top-1 w-5 h-5 rounded-full transition-all duration-300"
-                  style={{
-                    left: annual ? '2rem' : '0.25rem',
-                    background: annual ? 'hsl(158 90% 4%)' : 'hsl(158 80% 50% / 0.5)',
-                  }}
+                  className="absolute top-1 w-5 h-5 rounded-full bg-background shadow-sm transition-all duration-300"
+                  style={{ left: annual ? '2rem' : '0.25rem' }}
                 />
               </button>
               <span className={annual ? 'text-foreground' : 'text-muted-foreground'}>
@@ -69,9 +69,9 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {PLANS.map((plan, i) => (
             <ScrollReveal key={plan.name} delay={i * 120}>
-              <GlassCard className={`p-8 relative h-full flex flex-col ${plan.popular ? 'ring-1 ring-primary/40' : ''}`}>
+              <div className={`p-8 relative h-full flex flex-col rounded-2xl border bg-card transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 ${plan.popular ? 'border-primary/40 shadow-md shadow-primary/10' : 'border-border'}`}>
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-mono font-bold" style={{ background: 'hsl(158 80% 50%)', color: 'hsl(158 90% 4%)' }}>
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-mono font-bold bg-primary text-primary-foreground">
                     Most Popular
                   </div>
                 )}
@@ -99,7 +99,7 @@ const PricingSection = () => {
                 >
                   Get Started
                 </a>
-              </GlassCard>
+              </div>
             </ScrollReveal>
           ))}
         </div>
