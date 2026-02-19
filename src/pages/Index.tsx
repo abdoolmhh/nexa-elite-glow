@@ -16,7 +16,7 @@ const WHATSAPP_NUMBER = '2348000000000';
 const EMAIL_ADDRESS = 'hello@nexastoreos.com';
 
 const Index = () => (
-  <div className="min-h-screen bg-background text-foreground grain-overlay">
+  <div className="min-h-screen bg-background text-foreground">
     <ParticleField />
     <Navbar />
     <main>

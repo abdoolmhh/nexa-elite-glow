@@ -1,5 +1,4 @@
 import ScrollReveal from './ScrollReveal';
-import GlassCard from './GlassCard';
 
 const TRUST_ITEMS = [
   {
@@ -25,11 +24,11 @@ const TrustStrip = () => (
       <div className="grid md:grid-cols-3 gap-6">
         {TRUST_ITEMS.map((item, i) => (
           <ScrollReveal key={item.title} delay={i * 120}>
-            <GlassCard className="text-center p-8">
+            <div className="text-center p-8 rounded-2xl border border-border bg-card hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
               <div className="text-3xl mb-4">{item.icon}</div>
               <h3 className="font-mono font-bold text-foreground mb-2">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>
-            </GlassCard>
+            </div>
           </ScrollReveal>
         ))}
       </div>

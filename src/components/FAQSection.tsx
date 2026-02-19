@@ -20,6 +20,10 @@ const FAQSection = () => (
     <div className="container mx-auto px-6 max-w-3xl">
       <ScrollReveal>
         <div className="text-center mb-12">
+          <span className="section-badge">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            FAQ
+          </span>
           <h2 className="section-heading text-foreground">
             Common <span className="text-primary">questions.</span>
           </h2>
@@ -27,7 +31,7 @@ const FAQSection = () => (
       </ScrollReveal>
 
       <ScrollReveal delay={100}>
-        <div className="glass-panel rounded-2xl p-2">
+        <div className="rounded-2xl border border-border bg-card p-2">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-border/30 px-4">

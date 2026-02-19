@@ -1,5 +1,4 @@
 import ScrollReveal from './ScrollReveal';
-import GlassCard from './GlassCard';
 import { AIChipCore } from './icons/ThreeDIcons';
 
 const AI_FEATURES = [
@@ -13,43 +12,39 @@ const AISection = () => (
     <div className="container mx-auto px-6">
       <ScrollReveal>
         <div className="text-center mb-16">
+          <span className="section-badge">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            AI-Powered
+          </span>
           <h2 className="section-heading text-foreground">
-            <span className="text-primary glow-text">AI</span> that works while you sleep.
+            <span className="text-primary">AI</span> that works while you sleep.
           </h2>
           <p className="section-subheading">Embedded intelligence that learns your business and acts on your behalf.</p>
         </div>
       </ScrollReveal>
 
-      <div className="grid md:grid-cols-3 gap-8 items-center">
-        <ScrollReveal delay={0}>
-          <GlassCard className="p-8">
-            <div className="text-2xl mb-3">{AI_FEATURES[0].icon}</div>
-            <h3 className="font-mono font-bold text-foreground mb-2">{AI_FEATURES[0].title}</h3>
-            <p className="text-sm text-muted-foreground">{AI_FEATURES[0].desc}</p>
-          </GlassCard>
-        </ScrollReveal>
-
-        <ScrollReveal delay={150}>
-          <div className="flex flex-col items-center gap-6">
-            <div className="glow-pulse rounded-full p-4">
-              <AIChipCore className="w-32 h-32" />
+      <div className="grid md:grid-cols-3 gap-8 items-start">
+        {AI_FEATURES.map((feat, i) => (
+          <ScrollReveal key={feat.title} delay={i * 150}>
+            <div className="p-8 rounded-2xl border border-border bg-card hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 text-center">
+              <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 mx-auto">
+                <span className="text-2xl">{feat.icon}</span>
+              </div>
+              <h3 className="font-mono font-bold text-foreground mb-2">{feat.title}</h3>
+              <p className="text-sm text-muted-foreground">{feat.desc}</p>
             </div>
-            <GlassCard className="p-8 w-full">
-              <div className="text-2xl mb-3">{AI_FEATURES[1].icon}</div>
-              <h3 className="font-mono font-bold text-foreground mb-2">{AI_FEATURES[1].title}</h3>
-              <p className="text-sm text-muted-foreground">{AI_FEATURES[1].desc}</p>
-            </GlassCard>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={300}>
-          <GlassCard className="p-8">
-            <div className="text-2xl mb-3">{AI_FEATURES[2].icon}</div>
-            <h3 className="font-mono font-bold text-foreground mb-2">{AI_FEATURES[2].title}</h3>
-            <p className="text-sm text-muted-foreground">{AI_FEATURES[2].desc}</p>
-          </GlassCard>
-        </ScrollReveal>
+          </ScrollReveal>
+        ))}
       </div>
+
+      {/* Central AI orb */}
+      <ScrollReveal delay={200}>
+        <div className="flex justify-center mt-12">
+          <div className="glow-pulse rounded-full p-4">
+            <AIChipCore className="w-24 h-24 opacity-80" />
+          </div>
+        </div>
+      </ScrollReveal>
     </div>
   </section>
 );

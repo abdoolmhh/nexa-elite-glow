@@ -11,6 +11,10 @@ const HowItWorks = () => (
     <div className="container mx-auto px-6">
       <ScrollReveal>
         <div className="text-center mb-16">
+          <span className="section-badge">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            How It Works
+          </span>
           <h2 className="section-heading text-foreground">
             Three steps to <span className="text-primary">control.</span>
           </h2>
@@ -26,18 +30,11 @@ const HowItWorks = () => (
           <ScrollReveal key={step.num} delay={i * 200}>
             <div className={`flex items-start gap-6 mb-16 last:mb-0 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
               <div className="flex-shrink-0 relative z-10">
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center font-mono font-bold text-lg glow-pulse"
-                  style={{
-                    background: 'hsl(158 80% 50% / 0.1)',
-                    border: '2px solid hsl(158 80% 50% / 0.3)',
-                    color: 'hsl(158 80% 50%)',
-                  }}
-                >
+                <div className="w-16 h-16 rounded-full flex items-center justify-center font-mono font-bold text-lg bg-accent text-primary border-2 border-primary/20">
                   {step.num}
                 </div>
               </div>
-              <div className={`glass-panel p-6 rounded-xl flex-1 ${i % 2 === 1 ? 'md:text-right' : ''}`}>
+              <div className={`p-6 rounded-xl border border-border bg-card flex-1 ${i % 2 === 1 ? 'md:text-right' : ''}`}>
                 <h3 className="font-mono font-bold text-foreground mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground">{step.desc}</p>
               </div>
