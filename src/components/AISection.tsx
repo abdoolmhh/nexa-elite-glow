@@ -1,10 +1,10 @@
 import ScrollReveal from './ScrollReveal';
-import { AIChipCore } from './icons/ThreeDIcons';
+import { RefreshCw, AlertTriangle, Search, Cpu } from 'lucide-react';
 
 const AI_FEATURES = [
-  { title: 'Smart reorder suggestions', desc: 'AI predicts when to restock based on sales velocity and lead times.', icon: '🔄' },
-  { title: 'Low stock & expiry alerts', desc: 'Get notified before items run out or expire. Never waste stock again.', icon: '⚠️' },
-  { title: 'Leakage & anomaly detection', desc: 'AI flags unusual patterns — missing stock, suspicious voids, and discrepancies.', icon: '🔍' },
+  { title: 'Smart reorder suggestions', desc: 'AI predicts when to restock based on sales velocity and lead times.', Icon: RefreshCw },
+  { title: 'Low stock & expiry alerts', desc: 'Get notified before items run out or expire. Never waste stock again.', Icon: AlertTriangle },
+  { title: 'Leakage & anomaly detection', desc: 'AI flags unusual patterns — missing stock, suspicious voids, and discrepancies.', Icon: Search },
 ];
 
 const AISection = () => (
@@ -27,21 +27,21 @@ const AISection = () => (
         {AI_FEATURES.map((feat, i) => (
           <ScrollReveal key={feat.title} delay={i * 150}>
             <div className="p-8 rounded-2xl border border-border bg-card hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 text-center">
-              <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 mx-auto">
-                <span className="text-2xl">{feat.icon}</span>
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 mx-auto">
+                <feat.Icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-mono font-bold text-foreground mb-2">{feat.title}</h3>
-              <p className="text-sm text-muted-foreground">{feat.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{feat.desc}</p>
             </div>
           </ScrollReveal>
         ))}
       </div>
 
-      {/* Central AI orb */}
+      {/* Central AI indicator */}
       <ScrollReveal delay={200}>
         <div className="flex justify-center mt-12">
-          <div className="glow-pulse rounded-full p-4">
-            <AIChipCore className="w-24 h-24 opacity-80" />
+          <div className="glow-pulse rounded-full p-4 bg-primary/5 border border-primary/20">
+            <Cpu className="w-16 h-16 text-primary opacity-70" />
           </div>
         </div>
       </ScrollReveal>
