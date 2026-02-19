@@ -1,4 +1,5 @@
 import mockupDashboard from '@/assets/mockup-dashboard.png';
+import { CheckCircle2 } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -25,10 +26,10 @@ const HeroSection = () => {
             <a href="#cta" className="btn-primary text-center">Get a Free Setup</a>
             <a href="#demo" className="btn-secondary text-center">Watch Demo</a>
           </div>
-          <div className="hero-reveal-5 flex flex-wrap gap-6 text-sm text-muted-foreground font-mono">
+          <div className="hero-reveal-5 flex flex-wrap gap-6 text-sm text-muted-foreground">
             {['Secure roles', 'Fast POS', 'Sync-ready'].map(label => (
               <span key={label} className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+                <CheckCircle2 className="w-4 h-4 text-primary" />
                 {label}
               </span>
             ))}
