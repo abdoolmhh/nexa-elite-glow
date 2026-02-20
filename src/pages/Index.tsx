@@ -3,11 +3,13 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import TrustStrip from '@/components/TrustStrip';
 import FeaturesGrid from '@/components/FeaturesGrid';
+import RealBusinessSection from '@/components/RealBusinessSection';
 import AISection from '@/components/AISection';
 import DemoSection from '@/components/DemoSection';
 import HowItWorks from '@/components/HowItWorks';
 import PricingSection from '@/components/PricingSection';
 import FAQSection from '@/components/FAQSection';
+import IntegrationScroll from '@/components/IntegrationScroll';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
@@ -23,11 +25,13 @@ const Index = () => (
       <HeroSection />
       <TrustStrip />
       <FeaturesGrid />
+      <RealBusinessSection />
       <AISection />
       <DemoSection />
       <HowItWorks />
       <PricingSection />
       <FAQSection />
+      <IntegrationScroll />
       <FinalCTA whatsapp={WHATSAPP_NUMBER} email={EMAIL_ADDRESS} />
     </main>
     <Footer />
