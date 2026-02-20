@@ -1,5 +1,5 @@
 import ScrollReveal from './ScrollReveal';
-import { MessageCircle, Mail, Play } from 'lucide-react';
+import { MessageCircle, Mail, ArrowRight } from 'lucide-react';
 
 interface FinalCTAProps {
   whatsapp: string;
@@ -7,28 +7,40 @@ interface FinalCTAProps {
 }
 
 const FinalCTA = ({ whatsapp, email }: FinalCTAProps) => (
-  <section id="cta" className="py-24 relative z-10">
+  <section id="cta" className="py-28 relative z-10">
     <div className="container mx-auto px-6">
-      <div className="text-center max-w-3xl mx-auto p-12 rounded-3xl border border-border bg-card relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 0%, hsl(158 80% 50% / 0.06), transparent 70%)' }} />
+      <div className="relative max-w-3xl mx-auto text-center p-14 rounded-3xl border border-border bg-card overflow-hidden">
+        {/* Radial glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 0%, hsl(158 80% 50% / 0.08), transparent 70%)' }}
+        />
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-32 pointer-events-none blur-[60px]"
+          style={{ background: 'hsl(158 80% 50% / 0.1)' }}
+        />
 
         <ScrollReveal>
-          <h2 className="section-heading text-foreground mb-4 relative z-10">
-            Ready to stop guessing and start{' '}
-            <span className="text-primary">controlling</span> your store?
+          <span className="section-badge relative z-10">Get Started Today</span>
+          <h2 className="section-heading text-foreground mb-3 relative z-10">
+            Ready to Take Control<br />of Your Store?
           </h2>
           <p className="section-subheading mb-10 relative z-10">
-            Join hundreds of Nigerian businesses already running smarter with NEXA StoreOS.
+            Join smart retailers who manage sales, stock, and profit in one place.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={150}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center relative z-10 mb-6">
+            <a href="#features" className="btn-primary cta-glow text-center">
+              Start Free Today
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </a>
             <a
               href={`https://wa.me/${whatsapp}?text=Hi%2C%20I%27d%20like%20to%20set%20up%20NEXA%20StoreOS%20for%20my%20business.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-center"
+              className="btn-secondary text-center"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp Us
@@ -37,11 +49,8 @@ const FinalCTA = ({ whatsapp, email }: FinalCTAProps) => (
               <Mail className="w-4 h-4 mr-2" />
               Send Email
             </a>
-            <a href="#demo" className="btn-secondary text-center">
-              <Play className="w-4 h-4 mr-2" />
-              Book a Demo
-            </a>
           </div>
+          <p className="text-xs text-muted-foreground relative z-10">No credit card needed · Setup in 24 hours · Cancel anytime</p>
         </ScrollReveal>
       </div>
     </div>
