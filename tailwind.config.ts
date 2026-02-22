@@ -14,7 +14,6 @@ export default {
     },
     extend: {
       fontFamily: {
-        mono: ["Space Mono", "monospace"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
