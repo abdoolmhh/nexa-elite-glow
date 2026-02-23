@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
+import mockupPos from '@/assets/mockup-pos-v2.png';
+import mockupReports from '@/assets/mockup-reports.png';
+import mockupAnalytics from '@/assets/mockup-analytics.png';
 
 const INDUSTRIES = [
   {
@@ -8,6 +11,7 @@ const INDUSTRIES = [
     emoji: '💊',
     features: ['Expiry date tracking', 'Batch number management', 'Drug interaction alerts', 'NAFDAC compliance'],
     highlight: 'Track expiry dates automatically',
+    mockup: mockupPos,
   },
   {
     key: 'supermarket',
@@ -15,6 +19,7 @@ const INDUSTRIES = [
     emoji: '🛒',
     features: ['Barcode scanning', 'Bulk restocking', 'Category management', 'Supplier ordering'],
     highlight: 'Bulk restock in one click',
+    mockup: mockupReports,
   },
   {
     key: 'wholesale',
@@ -22,6 +27,7 @@ const INDUSTRIES = [
     emoji: '📦',
     features: ['Margin analytics', 'Tiered pricing', 'Customer accounts', 'Bulk discounts'],
     highlight: 'Understand margins instantly',
+    mockup: mockupAnalytics,
   },
 ];
 
@@ -86,7 +92,7 @@ const IndustrySwitcher = () => {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 gap-3 mb-6">
                 {current.features.map((feat) => (
                   <div key={feat} className="flex items-center gap-2.5 p-3 rounded-xl bg-background/50 border border-border/50">
                     <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
@@ -97,6 +103,16 @@ const IndustrySwitcher = () => {
                     <span className="text-sm text-foreground font-medium">{feat}</span>
                   </div>
                 ))}
+              </div>
+
+              {/* Mockup screenshot */}
+              <div className="rounded-xl overflow-hidden border border-border/50 shadow-lg">
+                <img
+                  src={current.mockup}
+                  alt={`${current.label} mockup`}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
