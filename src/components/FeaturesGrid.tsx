@@ -4,27 +4,27 @@ import ScrollReveal from './ScrollReveal';
 const FEATURES = [
   {
     icon: Zap,
-    title: 'Fast Checkout',
-    desc: 'Scan. Tap. Done.',
-    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.04))',
+    title: 'Lightning Checkout',
+    desc: 'Scan, tap, done. Process sales in under 3 seconds flat.',
+    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.06))',
   },
   {
     icon: Package,
     title: 'Smart Inventory',
-    desc: 'Know what\'s left.',
-    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.03))',
+    desc: 'Always know what\'s in stock, what\'s running low, and what\'s dead weight.',
+    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.04))',
   },
   {
     icon: Brain,
-    title: 'AI Reorder',
-    desc: 'Restock automatically.',
-    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.05))',
+    title: 'AI Auto-Reorder',
+    desc: 'Our AI learns your sales patterns and restocks before you even notice.',
+    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.07))',
   },
   {
     icon: BarChart3,
-    title: 'Profit Insights',
-    desc: 'Margins, instantly.',
-    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.04))',
+    title: 'Profit X-Ray',
+    desc: 'See exactly which products make money and which drain it.',
+    gradient: 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.05))',
   },
 ];
 
@@ -38,28 +38,31 @@ const FeaturesGrid = () => (
             Core Powers
           </span>
           <h2 className="section-heading text-foreground">
-            Everything you need.<br />
-            <span className="text-primary">Nothing you don't.</span>
+            Four superpowers.<br />
+            <span className="text-primary">Zero complexity.</span>
           </h2>
+          <p className="section-subheading">
+            Each feature is built to save you time and make you money.
+          </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl mx-auto">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
         {FEATURES.map(({ icon: Icon, title, desc, gradient }, i) => (
           <ScrollReveal key={title} delay={i * 100}>
             <div
-              className="glass-card !p-7 text-center group cursor-default h-full"
+              className="glass-card-3d !p-8 text-center group cursor-default h-full"
               style={{ background: gradient }}
             >
-              <div className="w-12 h-12 rounded-2xl mx-auto mb-5 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
-                style={{ background: 'hsl(var(--primary) / 0.1)' }}
+              <div className="w-14 h-14 rounded-2xl mx-auto mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-lg"
+                style={{ background: 'hsl(var(--primary) / 0.1)', boxShadow: '0 0 0 0 hsl(var(--primary) / 0)' }}
               >
-                <Icon className="w-5 h-5 text-primary" />
+                <Icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold text-foreground mb-1.5 text-base" style={{ letterSpacing: '-0.01em' }}>
+              <h3 className="font-bold text-foreground mb-2 text-lg" style={{ letterSpacing: '-0.02em' }}>
                 {title}
               </h3>
-              <p className="text-sm text-muted-foreground">{desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
             </div>
           </ScrollReveal>
         ))}
